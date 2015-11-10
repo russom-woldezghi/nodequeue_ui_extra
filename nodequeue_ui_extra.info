@@ -1,0 +1,5 @@
+name = Nodequeue UI Extra
+description = Modifies subqueue UI
+core = 7.x
+
+

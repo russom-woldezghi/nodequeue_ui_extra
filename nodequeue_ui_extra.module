@@ -1,0 +1,26 @@
+<?php
+
+function nodequeue_ui_extra_preprocess_table(&$variables) {
+  dpm($variables);
+  if (isset($variables['attributes']['id']) && $variables['attributes']['id'] == 'nodequeue-dragdrop-1') {
+    // Alter the table
+    dpm($variables);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function nodequeue_ui_extra_form_alter(&$form, &$form_state, $form_id) {
+  $id = '1';
+  if($form_id == 'nodequeue_arrange_subqueue_form_'.$id.''){
+    $form['nodes'][0]['title']['#markup'] = '<b>nope</b>';
+    $form['nodes'][] = array(
+        // 'status' => 'NOPE'
+      );
+  }
+}
+
+function nodequeue_ui_extra_table($variables){
+  dpm($variables);
+}
